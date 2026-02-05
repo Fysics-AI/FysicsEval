@@ -87,7 +87,7 @@
 如果你在研究中使用 **FysicsEval**，请引用：
 
 ```bibtex
-@article{han2025exploringphysical,
+@article{han2026exploringphysical,
     title={Exploring Physical Intelligence Emergence via Omni-Modal Architecture and Physical Data Engine},
     author={Han, Minghao and Yang, Dingkang and Jiang, Yue and Liu, Yizhou and Zhang, Lihua},
     journal={arXiv preprint arXiv:2602.xxxx},
