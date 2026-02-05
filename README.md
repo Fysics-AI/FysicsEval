@@ -1,115 +1,95 @@
 <p align="center" width="100%">
-<a target="_blank"><img src="figs/FysicsWorld-logo.png" alt="" style="width: 50%; min-width: 200px; display: block; margin: auto;"></a>
+<a target="_blank"><img src="assets/fudan-fysics.jpg" alt="" style="width: 90%; min-width: 200px; display: block; margin: auto;"></a>
 </p>
 
 <div align="center">
 <br>
-<h1>Exploring Physical Intelligence Emergence via Omni-Modal Architecture and Physical Data Engine</h1>
+<h1>FysicsEval: A Unified Evaluation System for Physical Perception, Prediction, Reasoning, and Understanding in Multimodal AI</h1>
 
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
 
-<font size=7><div align='center' > 
-[[🏠 Project Page](https://github.com/Fysics-AI/FysicsWorld)] 
-[[📖 Paper](https://arxiv.org/pdf/2512.12756)] 
-[[🤗 Dataset](https://huggingface.co/datasets/Fysics-AI/FysicsWorld)] 
-[[👾 ModelScope](https://www.modelscope.cn/datasets/Fysics-AI/FysicsWorld)] 
-[[🏆 Leaderboard](https://huggingface.co/spaces/Fysics-AI/FysicsWorld-Leaderboard)] 
+
+<font size=7><div align='center' >
+[[🏠 Project Page](https://github.com/Fysics-AI/FysicsEval)]
+[[📖 Paper](https://arxiv.org/pdf/xxxxxx)]
+[[🤗 Dataset](https://huggingface.co/datasets/Fysics-AI/FysicsEval)]
+[[🏆 Leaderboard](#leaderboard_link)]
 [[🀄 中文版](README_zh.md)]
-  </div></font>
+</div></font>
 
 </div>
 
-##  🚀  News
-- **`2025-12-14`** We release [***FysicsWorld***](https://huggingface.co/datasets/Fysics-AI/FysicsWorld), the first unified full-modality benchmark that supports bidirectional input–output across image, video, audio, and text, enabling comprehensive any-to-any evaluation across understanding, generation, and reasoning. 
+##  🚀   News
+- **`2026-02-05`** We release [**FysicsEval**](https://huggingface.co/datasets/Fysics-AI/FysicsEval), a unified evaluation system for physical perception, prediction, reasoning, and understanding in multimodal AI.
+
+## 🎯  Overview
+Existing physics benchmarks predominantly target theoretical problem-solving or qualitative scenario analysis, limiting their scope to intuitive physics or question-answering proficiency, which are insufficient for the next generation of generalist Physical AI designed to interact with physical reality. To address this gap, **FysicsEval** emphasizes quantitative prediction and reasoning grounded in physical laws, aiming to meet the demands of generalist models interacting with the physical world.
+
+<img src="assets/bmk.png" width="100%" height="100%">
 
 
+**FysicsEval** is a focused benchmark designed to measure multimodal models' abilities in physical perception, quantitative prediction, explainable reasoning, and cross-modal physical understanding. Compared to prior datasets that concentrate on qualitative intuition or isolated domains, **FysicsEval** emphasizes rigorous, multi-granular evaluation across three core capabilities:
+
+- Quantitative prediction of physical attributes from real-world multimodal evidence.
+- Interpretable physical reasoning grounded in conservation laws and causal mechanics.
+- Cross-modal physical-consistency understanding and physical-hallucination detection.
 
 
-## 🎯 ***FysicsWorld*** Overview
-<img src="figs/fig-teaser.jpg" width="100%" height="100%">
+## 🔮 Composition and Task Taxonomy
 
-We introduce ***FysicsWorld***, the **first** unified full-modality benchmark that supports bidirectional input–output across *image, video, audio, and text*, enabling comprehensive any-to-any evaluation across understanding, generation, and reasoning. Our systematic design spans uni-modal perception tasks to fusion-dependent reasoning under strong cross-modal coupling, allowing us to diagnose, with unprecedented clarity, the limitations and emerging strengths of modern multimodal and omni-modal architectures. In contrast to existing omni-modal and multi-modal benchmarks, our ***FysicsWorld*** has several advantages: 
+**FysicsEval** contains 3,854 samples and 3,781 real-world images, spanning rigid bodies, soft bodies, and fluids, and an 11-category attribute space including *stiffness, density, mass, static/kinetic friction coefficients, restitution, Young’s modulus, Poisson’s ratio, viscosity, surface tension, and yield stress*. **FysicsEval** provides three complementary tasks to probe physical intelligence:
 
-* **Diversity and High Quality**. ***FysicsWorld*** is characterized by **8 "multi"** properties, reflecting its comprehensive coverage, diversity, and robustness, namely:
-*multi-dimensional* (understanding, generation, reasoning, voice interaction), *multi-modal* (text, image, video, audio as both inputs and outputs), *multi-task* (16 primary tasks, 200+ sub-tasks), *multi-source* (3,268 samples from 40+ data sources and curated web data), *multi-domain* (170+ fine-grained open-domain categories), *multi-type* (closed-ended, open-ended, multiple-choice question, and image/video/audio generation), *multi-target* (evaluates Omni-LLMs, MLLMs, modality-specific models, unified understanding–generation models), and *multi-assurance* (multi-stage quality control strategies).
+- **Perception & Prediction of Physical Attributes** — quantitative numeric prediction.
+- **Explainable Physical Reasoning** — open-ended question and answer.
+- **Cross-modal Physical Consistent Understanding** — MCQs for physically inconsistent statements understanding.
 
-* **Fusion-Dependent Cross-Modal Reasoning**. We propose a method for omni-modal data construction, which is named **C**ross-**M**odal **C**omplementarity **S**creening (**CMCS**) strategy, which ensures that our tasks maintain strong cross-modal coupling, preventing single-modality shortcuts and enforcing true synergistic perception of omni-modality.
+Queries are diversified (numeric prediction, open-ended, MCQ) and stratified into three difficulty levels to prevent memorization and encourage robust generalization.
 
-* **Speech-Driven Cross-Modal Interaction**. To support natural, multimodal communication and interaction, we develop a speech-grounded multimodal data construction pipeline that ensures both linguistic fluency and semantic fidelity in voice-based interactions, including 10+ authentic voices and tones.
+## 🔍 Evaluation Protocols
 
-Based on **FysicsWorld**, we extensively evaluate various advanced models, including Omni-LLMs, MLLMs, modality-specific models, and unified understanding–generation models. By establishing a unified benchmark and highlighting key capability gaps, FysicsWorld provides not only a foundation for evaluating emerging multimodal systems but also a roadmap for the next generation of full-modality architectures capable of genuinely holistic perception, reasoning, and interaction.
+- Physical attribute predictions are scored with Mean Relative Accuracy (MRA).
+- Consistency understanding uses standard accuracy on MCQs.
+- Open-ended reasoning is judged by an LLM-based rubric across six dimensions (semantic consistency, parameter precision, causal validity, mechanism identification, chain completeness, quantitative–qualitative alignment). GPT-5 is used as the standardized automated judge under a fixed prompt and scoring protocol.
+- All evaluation scripts and scoring protocols are shown in `metrics`.
 
-<p align="center">
-    <img src="figs/fig-statiscs.jpg" width="100%" height="100%">
-</p>
+## 🏆 Leaderboard <a id="leaderboard_link"></a>
 
-## 🔍 Dataset Download
-The full dataset, including associated multimedia files (images, videos, and audio), can be downloaded from:
+The following table reports aggregated model performance on **FysicsEval**. `Reasoning×20` shows the original reasoning score scaled by 20. `Average` is the mean of `Prediction`, `Reasoning×20`, and `Understanding`. The table is sorted by `Average` (descending).
 
-- Link-1（🤗 HuggingFace）：[[Link](https://huggingface.co/datasets/Fysics-AI/FysicsWorld)]
-- Link-2（🤗 HF-Mirror）：[[Link](https://hf-mirror.com/datasets/Fysics-AI/FysicsWorld)]
-- Link-3（👾 ModelScope）：[[Link](https://www.modelscope.cn/datasets/Fysics-AI/FysicsWorld)]
+| Model                         | Size | Prediction | Reasoning×20 | Understanding | Average |
+|:------------------------------|:----:|:----------:|:------------:|:-------------:|:-------:|
+| GPT-5                        |  -   | 40.3       | 69.60        | 89.9          | 66.60   |
+| **OmniFysics (Ours)**                   | 3B   | 32.6       | 64.40        | 94.7          | 63.90   |
+| Gemini-2.5-flash             |  -   | 19.8       | 62.00        | 89.4          | 57.07   |
+| Qwen3-VL-8B-Instruct         | 8B   | 20.1       | 53.00        | 90.1          | 54.40   |
+| Ovis2.5                      | 2B   | 20.4       | 49.20        | 89.5          | 53.03   |
+| SAIL-VL2                     | 2B   | 21.9       | 51.60        | 84.7          | 52.73   |
+| Claude-4.5-Haiku             |  -   | 35.3       | 57.80        | 60.3          | 51.13   |
+| InternVL3.5-8B               | 8B   | 21.7       | 50.60        | 80.7          | 51.00   |
+| Qwen2.5-Omni                 | 3B   | 18.1       | 34.20        | 87.5          | 46.60   |
 
+Notes:
 
-
-
-## 🔮 Evaluation
-
-To ensure a fair and standardized evaluation protocol, we release the full ***FysicsWorld*** dataset with ground-truth answers withheld, along with a test-mini subset (300 samples) that includes answers for local validation and debugging. You can find the QA data in [./data](https://github.com/Fysics-AI/FysicsWorld/tree/main/data) (full ***FysicsWorld***) and [./test-mini](https://github.com/Fysics-AI/FysicsWorld/tree/main/test-mini) (test-mini), respectively.
-
-🕹️ **Usage**:
-
-1. Download the full FysicsWorld dataset from [here](https://huggingface.co/datasets/Fysics-AI/FysicsWorld).
-2. Run inference using your model on the provided questions.
-3. Follow the [guidelines](https://github.com/Fysics-AI/FysicsWorld/blob/main/eval/submission/EVALUATION.md), and format the model responses according to the required [submission format](https://github.com/Fysics-AI/FysicsWorld/blob/main/eval/submission/submission_format.json).
-4. Send the formatted responses to *dicken@fyscis.ai*. We will periodically update the corresponding scores on the leaderboard.
-
-
-## 📈 Experimental Results
-- **Evaluation results of Omni-LLMs and proprietary MLLMs on image-centric omni-modal tasks**
-
-<p align="center">
-    <img src="figs/tab-image.png" width="90%" height="100%">
-</p>
-
-*Task abbreviations:*
-Task1-1 (Image Understanding), Task2-1 (Speech-Driven Image Understanding), Task2-2 (Image–Audio Contextual Reasoning), Task2-3 (Speech-Based QA on Image Content), Task2-4 (Speech Generation from a Person in an Image), and Task2-5 (Audio Matching from Image Context).
-
-- **Evaluation results of Omni-LLMs and proprietary MLLMs on video-centric omni-modal tasks.**
-
-<p align="center">
-    <img src="figs/tab-video.png" width="90%" height="100%">
-</p>
-
-*Task abbreviations:*
-Task1-2 (Video Understanding), Task3-1 (Speech-Driven Video Understanding), Task3-2 (Video–Audio Contextual Reasoning), Task3-3 (Speech-Based QA on Video Content), Task3-4 (Speech Generation from a Person in an Video), Task3-5 (Audio Matching from Video Context), and Task3-6 (Next-Action Prediction from Video Sequences and Current Visual State).
-
-- **Evaluation results of open-source MLLMs on modality-supported tasks.**
-
-<p align="center">
-    <img src="figs/fig-open-mllm.jpg" width="60%" height="100%">
-</p>
-
-*Task abbreviations:*
-Task1-1 (Image Understanding), Task1-2 (Video Understanding), and Task3-6 (Next-Action Prediction from Video Sequences and Current Visual State).
+- `Prediction`: Mean Relative Accuracy (higher is better).
+- `Reasoning×20`: original `Reasoning` score × 20. (original `Reasoning` is score from 1 to 5)
+- `Understanding`: MCQ accuracy in percent (higher is better).
+- `Average` = mean(`Prediction`, `Reasoning×20`, `Understanding`).
 
 
-- **Evaluation results of various models on (a) Audio Reasoning and (b) Video Generation.**
+## 🕹️ Usage
 
-<p align="center">
-    <img src="figs/fig-exp-audio-video.jpg" width="90%" height="100%">
-</p>
-
+1. Download the dataset from [**here**](https://huggingface.co/datasets/Fysics-AI/FysicsEval). QA files are shown in `data`
+2. Run your model and evaluate outputs following the scripts in `metrics`.
 
 ## 📖 Citation
-
-If you find ***FysicsWorld*** helpful for your research, please consider citing our work. Thanks!
+If you use **FysicsEval** in your work, please cite:
 
 ```bibtex
-@article{jiang2025fysicsworld,
-    title={FysicsWorld: A Unified Full-Modality Benchmark for Any-to-Any Understanding, Generation, and Reasoning},
-    author={Jiang, Yue and Yang, Dingkang and Han, Minghao and Han, Jinghang and Chen, Zizhi and Liu, Yizhou and Li, Mingcheng and Zhai, Peng and Zhang, Lihua},
-    journal={arXiv preprint arXiv:2512.12756},
-    year={2025}
+@article{han2025exploringphysical,
+    title={Exploring Physical Intelligence Emergence via Omni-Modal Architecture and Physical Data Engine},
+    author={Han, Minghao and Yang, Dingkang and Jiang, Yue and Liu, Yizhou and Zhang, Lihua},
+    journal={arXiv preprint arXiv:2602.xxxx},
+    year={2026}
 }
 ```
+

@@ -1,122 +1,97 @@
 <p align="center" width="100%">
-<a target="_blank"><img src="figs/FysicsWorld-logo.png" alt="" style="width: 50%; min-width: 200px; display: block; margin: auto;"></a>
+<a target="_blank"><img src="assets/fudan-fysics.jpg" alt="" style="width: 90%; min-width: 200px; display: block; margin: auto;"></a>
 </p>
-
-
 
 <div align="center">
 <br>
-<h1>FysicsWorld: 统一的全模态理解、生成与推理评测基准</h1>
+<h1>FysicsEval：首个全维度具身物理感知与逻辑推理评测基准</h1>
 
-<h5 align="center"> 欢迎点击右上角的 [⭐ Star] 以便获取最新动态更新</h5>
+<h5 align="center">如果你喜欢本项目，欢迎在 GitHub 点亮 ⭐ 以便获取最新进展。</h5>
 
-<font size=7><div align='center' > 
-[[🏠 主页](https://github.com/Fysics-AI/FysicsWorld)] 
-[[📖 论文](https://arxiv.org/pdf/2512.12756)] 
-[[🤗 数据集](https://huggingface.co/datasets/Fysics-AI/FysicsWorld)] 
-[[👾 数据集 (魔搭)](https://www.modelscope.cn/datasets/Fysics-AI/FysicsWorld)] 
-[[🏆 排行榜](https://huggingface.co/spaces/Fysics-AI/FysicsWorld-Leaderboard)]
-  </div></font>
+
+<font size=7><div align='center' >
+[[🏠 主页](https://github.com/Fysics-AI/FysicsEval)]
+[[📖 论文](https://arxiv.org/pdf/xxxxxx)]
+[[🤗 数据集](https://huggingface.co/datasets/Fysics-AI/FysicsEval)]
+[[🏆 榜单](LEADERBOARD.md)]
+[[🇬🇧 English](README.md)]
+</div></font>
 
 </div>
 
-##  🚀  最新进展
-- **`2025-12-14`** 我们正式推出了首个面向真实物理世界的统一全模态评测基准——[***FysicsWorld***](https://huggingface.co/datasets/Fysics-AI/FysicsWorld)。该基准不仅能够评测模型在图像、视频、音频与文本间进行双向输入与输出的能力，还覆盖对真实物理世界场景的感知、理解、生成以及跨模态推理等核心能力。
+##  🚀   最新动态
+- **`2026-02-05`** 发布 [**FysicsEval**](https://huggingface.co/datasets/Fysics-AI/FysicsEval)——国际首个全维度具身物理感知与逻辑推理评测基准。
+
+## 🎯  项目概述
+现有物理智能基准多集中在理论解题或定性情景分析，通常只考察直觉物理或问答能力，难以满足面向真实物理世界交互的下一代通用物理 AI 需求。为了全方位量化物理AI的认知边界，我们正式推出了 **FysicsEval** ——国际首个全维度具身物理感知与逻辑推理评测基准。该评测基准是一个面向多模态物理智能的全维度、多粒度评估系统，首次将物理感知与预测、物理逻辑推理、物理世界理解三大核心能力纳入同一评估体系，为通用多模态模型建立了物理认知能力的统一标尺。
 
 
-
-## 🎯 ***FysicsWorld*** 概述
-<img src="figs/fig-teaser.jpg" width="100%" height="100%">
-
-我们正式推出了 ***FysicsWorld***，这是首个支持图像、视频、音频与文本之间双向输入–输出的统一全模态基准，能够对真实物理世界的感知、理解、生成与推理等能力进行全面的 any-to-any 评测。该基准采用系统化的设计范式，任务覆盖从基础单模态感知到跨模态信息强耦合下的复杂推理过程，从而全面探索了当前多模态与全模态（omni-modal）架构的局限性与新兴优势。相较于现有的全模态与多模态基准，***FysicsWorld*** 具备以下优势：
-
- - **高质量 & 高度多样性：** ***FysicsWorld*** 以 8 个“多”维特性为核心特征，全面体现了其覆盖范围的广泛性、多样性与鲁棒性，具体包括：
-    - 多维度（理解、生成、推理与语音交互）
-    - 多模态（文本、图像、视频与音频的全模态I/O）
-    - 多任务（16 项主要任务、200 余项子任务）
-    - 多数据源（共 3,268 个样本，涵盖 40 余个数据源及人工筛选的网络数据）
-    - 多领域（170 余个细粒度的开放领域类别）
-    - 多类型（封闭式问答、开放式问答、多项选择题以及图像/视频/音频生成）
-    - 多目标（评测对象涵盖全模态模型、通用多模态模型、特定模态的专用模型、以及统一理解生成模型）
-    - 多重保障（多阶段质量控制策略）
-- **跨模态融合依赖的推理：** 我们提出了一种全模态数据构建方法，称为 **“跨模态互补性筛选策略”** （Cross-Modal Complementarity Screening，CMCS）。该策略确保任务中保持跨模态强耦合关系，有效避免模型通过单一模态走捷径，从而强制实现真正的全模态融合的协同感知。
-- **语音驱动的跨模态交互：** 为支持真实物理世界场景中跨模态交流与人机交互，我们构建了一套以语音为核心锚点的多模态数据生成流水线，在语音交互场景中同时保证语言流畅性与语义保真度，并涵盖 10 余种真实语音与语调。
-
-基于 ***FysicsWorld***，我们对多种最先进模型进行了系统而全面的评测，包括全模态模型、通用多模态模型、特定模态的专用模型、以及统一理解生成模型，建立了统一的评测基线并揭示关键能力缺口，不仅为多模态模态架构的性能评估奠定了坚实基础，也为下一代新兴全模态架构实现真正的跨模态感知-理解-推理-生成指明了前进方向。
+<img src="assets/bmk.png" width="100%" height="100%">
 
 
-<p align="center">
-    <img src="figs/fig-statiscs.jpg" width="100%" height="100%">
-</p>
+**FysicsEval** 衡量了多模态模型在物理感知、定量预测、可解释推理以及跨模态物理一致性理解方面的能力。相较于只关注定性直觉或单一领域的过往数据集，**FysicsEval** 强调围绕三类核心能力的严格、多粒度评测：
 
-## 🔍 数据下载
-完整数据集和相应的多媒体文件（图像、视频、音频）：
-
-- 下载路径 1（🤗 HuggingFace）：[[链接](https://huggingface.co/datasets/Fysics-AI/FysicsWorld)]
-- 下载路径 2（🤗 HF-Mirror）：[[链接](https://hf-mirror.com/datasets/Fysics-AI/FysicsWorld)]
-- 下载路径 3（👾 ModelScope）：[[链接](https://www.modelscope.cn/datasets/Fysics-AI/FysicsWorld)]
+- 基于真实多模态证据的物理属性**定量预测**。
+- 基于守恒律与因果力学的可解释**物理推理**。
+- 跨模态物理**一致性理解**与物理**幻觉检测**。
 
 
+## 🔮  统计分类
+
+**FysicsEval**包含了 3,854 个样本与 3,781 张真实世界图像，覆盖刚体、软体与流体三大类型；属性空间涵盖 11 类：刚度、密度、质量、静/动摩擦系数、恢复系数、杨氏模量、泊松比、黏度、表面张力、屈服应力。 **FysicsEval** 提供三类互补任务以刻画物理智能：
+
+- **物理属性感知与预测** —— 给出定量数值估计。
+- **可解释物理推理** —— 开放式回答，评测因果正确性。
+- **跨模态物理一致性理解** —— 通过选择题检测物理不一致描述。
+
+任务查询形式涵盖数值预测、开放式问答、选择题，并按三个难度层级分层，降低记忆捷径、提升泛化鲁棒性。
+
+## 🔍  评测协议
+
+- 物理属性预测以平均相对准确率（Mean Relative Accuracy, MRA）计分
+- 一致性理解使用选择题准确率
+- 开放式推理由 LLM 基于统一 rubric 在六个维度打分（语义一致性、参数精度、因果有效性、机制识别、链条完整性、定量–定性一致性）。评测使用固定提示与评分协议的 GPT-5。
+- 所有评测脚本及 LLM 评测协议见 `metrics`。
+
+## 🏆  排行榜
+
+下表为各模型在 **FysicsEval** 上的综合成绩。`Reasoning×20` 为原推理得分放大 20 倍；`Average` 为 `Prediction`、`Reasoning×20`、`Understanding` 的均值，表格按 `Average` 降序排列。
+
+| Model                         | Size | Prediction | Reasoning×20 | Understanding | Average |
+|:------------------------------|:----:|:----------:|:------------:|:-------------:|:-------:|
+| GPT-5                        |  -   | 40.3       | 69.60        | 89.9          | 66.60   |
+| **OmniFysics (Ours)**                   | 3B   | 32.6       | 64.40        | 94.7          | 63.90   |
+| Gemini-2.5-flash             |  -   | 19.8       | 62.00        | 89.4          | 57.07   |
+| Qwen3-VL-8B-Instruct         | 8B   | 20.1       | 53.00        | 90.1          | 54.40   |
+| Ovis2.5                      | 2B   | 20.4       | 49.20        | 89.5          | 53.03   |
+| SAIL-VL2                     | 2B   | 21.9       | 51.60        | 84.7          | 52.73   |
+| Claude-4.5-Haiku             |  -   | 35.3       | 57.80        | 60.3          | 51.13   |
+| InternVL3.5-8B               | 8B   | 21.7       | 50.60        | 80.7          | 51.00   |
+| Qwen2.5-Omni                 | 3B   | 18.1       | 34.20        | 87.5          | 46.60   |
+
+说明：
+
+- `Prediction`：平均相对准确率（越高越好）。
+- `Reasoning×20`：原始推理得分 × 20。（注：原始推理得分为1-5分）
+- `Understanding`：选择题准确率（百分比，越高越好）。
+- `Average` = mean(`Prediction`, `Reasoning×20`, `Understanding`)。
 
 
-## 🔮 基准评测
+## 🕹️ 使用方式
 
-为确保评测协议的公平性与标准化，第一阶段我们公开发布完整的 ***FysicsWorld*** 数据集任务和问题，以及一个包含正确答案的 test-mini 子集（300 个样本），用于本地验证与调试。相应的问答数据分别位于 [./data](https://github.com/Fysics-AI/FysicsWorld/tree/main/data) 与 [./test-mini](https://github.com/Fysics-AI/FysicsWorld/tree/main/test-mini)中。
-
-🕹️ **使用指南**:
-
-1. 下载完整的 Fysics 数据集。
-2. 按需选用 Fysics 中感兴趣的目标任务用于评测你的本地模型。
-3. 遵循[评测指南](https://github.com/Fysics-AI/FysicsWorld/blob/main/eval/submission/EVALUATION.md)，将模型输出内容格式化为：[参考格式](https://github.com/Fysics-AI/FysicsWorld/blob/main/eval/submission/submission_format.json).
-4. 将待测评结果发送至 *dicken@fyscis.ai*，我们会尽快给您反馈并在排行榜上更新您的成绩。
-
-
-
-## 📈 评测结果
-- **全模态/视觉语言大模型在图像为中心任务上的性能对比**
-
-<p align="center">
-    <img src="figs/tab-image.png" width="90%" height="100%">
-</p>
-
-*任务 ID:*
-Task1-1 (图像理解), Task2-1 (语音驱动的图像理解), Task2-2 (图像-音频跨模态推理), Task2-3 (基于语音的图像内容问答), Task2-4 (基于图像人物角色的语音生成), and Task2-5 (基于图像内容的音频匹配)。
-
-- **全模态/视觉语言大模型在视频为中心任务上的性能对比**
-
-<p align="center">
-    <img src="figs/tab-video.png" width="90%" height="100%">
-</p>
-
-*任务 ID:*
-Task1-2 (视频理解), Task3-1 (语音驱动的视频理解), Task3-2 (视频-音频跨模态推理), Task3-3 (基于语音的图像内容问答), Task3-4 (基于图像人物角色的语音生成), Task3-5 (基于图像内容的音频匹配), and Task3-6 (基于视频动作序列和当前状态的后续行为预测)。
-
-- **开源多模态大模型在部分模态支持的任务上的性能对比**
-
-<p align="center">
-    <img src="figs/fig-open-mllm.jpg" width="60%" height="100%">
-</p>
-
-*任务 ID:*
-Task1-1 (图像理解), Task1-2 (视频理解), and Task3-6 (基于视频动作序列和当前状态的后续行为预测)。
-
-
-- **不同模型在 (a)音频推理和 (b)视频生成任务上的性能对比**
-
-<p align="center">
-    <img src="figs/fig-exp-audio-video.jpg" width="90%" height="100%">
-</p>
+1. 从 HuggingFace 下载完整 **FysicsEval** 数据集，QA文件参考见 `data`。 
+2. 按 `metrics` 中的评测脚本，评测模型输出结果。
 
 
 ## 📖 引用
-
-如果 ***FysicsWorld*** 对你的研究有所帮助，欢迎引用我们的工作。感谢支持！
+如果你在研究中使用 **FysicsEval**，请引用：
 
 ```bibtex
-@article{jiang2025fysicsworld,
-    title={FysicsWorld: A Unified Full-Modality Benchmark for Any-to-Any Understanding, Generation, and Reasoning},
-    author={Jiang, Yue and Yang, Dingkang and Han, Minghao and Han, Jinghang and Chen, Zizhi and Liu, Yizhou and Li, Mingcheng and Zhai, Peng and Zhang, Lihua},
-    journal={arXiv preprint arXiv:2512.12756},
-    year={2025}
+@article{han2025exploringphysical,
+    title={Exploring Physical Intelligence Emergence via Omni-Modal Architecture and Physical Data Engine},
+    author={Han, Minghao and Yang, Dingkang and Jiang, Yue and Liu, Yizhou and Zhang, Lihua},
+    journal={arXiv preprint arXiv:2602.xxxx},
+    year={2026}
 }
 ```
+
