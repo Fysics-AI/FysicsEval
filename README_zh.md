@@ -55,7 +55,7 @@
 
 ## 🏆  排行榜
 
-下表为各模型在 **FysicsEval** 上的综合成绩。`Reasoning×20` 为原推理得分放大 20 倍；`Average` 为 `Prediction`、`Reasoning×20`、`Understanding` 的均值，表格按 `Average` 降序排列。
+下表为各模型在 **FysicsEval** 上的综合成绩。`Reasoning×20` 为原推理得分放大 20 倍以对齐量纲；`Average` 为 `Prediction`、`Reasoning×20`、`Understanding` 的均值，表格按 `Average` 降序排列。
 
 | Model                         | Size | Prediction | Reasoning×20 | Understanding | Average |
 |:------------------------------|:----:|:----------:|:------------:|:-------------:|:-------:|
