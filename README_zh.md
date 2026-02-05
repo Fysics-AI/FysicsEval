@@ -13,8 +13,8 @@
 [[🏠 主页](https://github.com/Fysics-AI/FysicsEval)]
 [[📖 论文](https://arxiv.org/pdf/xxxxxx)]
 [[🤗 数据集](https://huggingface.co/datasets/Fysics-AI/FysicsEval)]
-[[🏆 榜单](LEADERBOARD.md)]
-[[🇬🇧 English](README.md)]
+[[🏆 排行榜](#leaderboard_link_zh)]
+[[🔤 English](README.md)]
 </div></font>
 
 </div>
@@ -53,7 +53,7 @@
 - 开放式推理由 LLM 基于统一 rubric 在六个维度打分（语义一致性、参数精度、因果有效性、机制识别、链条完整性、定量–定性一致性）。评测使用固定提示与评分协议的 GPT-5。
 - 所有评测脚本及 LLM 评测协议见 `metrics`。
 
-## 🏆  排行榜
+## 🏆  排行榜 <a id="leaderboard_link_zh"></a>
 
 下表为各模型在 **FysicsEval** 上的综合成绩。`Reasoning×20` 为原推理得分放大 20 倍以对齐量纲；`Average` 为 `Prediction`、`Reasoning×20`、`Understanding` 的均值，表格按 `Average` 降序排列。
 
