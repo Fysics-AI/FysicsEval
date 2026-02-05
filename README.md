@@ -4,7 +4,7 @@
 
 <div align="center">
 <br>
-<h1>FysicsEval: A Unified Evaluation System for Physical Perception, Prediction, Reasoning, and Understanding in Multimodal AI</h1>
+<h1>FysicsEval: A Unified Benchmark for Physical Perception, Prediction, Reasoning, and Understanding</h1>
 
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
 
