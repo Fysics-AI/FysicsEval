@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-<a target="_blank"><img src="assets/fudan-fysics.jpg" alt="" style="width: 90%; min-width: 200px; display: block; margin: auto;"></a>
+<a target="_blank"><img src="assets/fudan-fysics.jpg" alt="" style="width: 75%; min-width: 200px; display: block; margin: auto;"></a>
 </p>
 
 <div align="center">
