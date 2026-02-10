@@ -20,7 +20,7 @@
 </div>
 
 ##  🚀   News
-- **`2026-02-09`** We release [**FysicsEval**](https://huggingface.co/datasets/Fysics-AI/FysicsEval), a unified benchmark for physical perception, prediction, reasoning, and understanding.
+- **`2026-02-09`** We release **FysicsEval**, a unified benchmark for physical perception, prediction, reasoning, and understanding.
 
 ## 🎯  Overview
 Existing physics benchmarks predominantly target theoretical problem-solving or qualitative scenario analysis, limiting their scope to intuitive physics or question-answering proficiency, which are insufficient for the next generation of generalist Physical AI designed to interact with physical reality. To address this gap, **FysicsEval** emphasizes quantitative prediction and reasoning grounded in physical laws, aiming to meet the demands of generalist models interacting with the physical world.
