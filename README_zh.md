@@ -11,7 +11,7 @@
 
 <font size=7><div align='center' >
 [[🏠 主页](https://github.com/Fysics-AI/FysicsEval)]
-[[📖 论文](https://arxiv.org/pdf/xxxxxx)]
+[[📖 论文](https://arxiv.org/pdf/2602.07064)]
 [[🤗 数据集](https://huggingface.co/datasets/Fysics-AI/FysicsEval)]
 [[🏆 排行榜](#leaderboard_link_zh)]
 [[🔤 English](README.md)]
@@ -20,7 +20,7 @@
 </div>
 
 ##  🚀   最新动态
-- **`2026-02-05`** 发布 [**FysicsEval**](https://huggingface.co/datasets/Fysics-AI/FysicsEval)——国际首个全维度具身物理感知与逻辑推理评测基准。
+- **`2026-02-09`** 发布 [**FysicsEval**](https://huggingface.co/datasets/Fysics-AI/FysicsEval)——国际首个全维度具身物理感知与逻辑推理评测基准。
 
 ## 🎯  项目概述
 现有物理智能基准多集中在理论解题或定性情景分析，通常只考察直觉物理或问答能力，难以满足面向真实物理世界交互的下一代通用物理 AI 需求。为了全方位量化物理AI的认知边界，我们正式推出了 **FysicsEval** ——国际首个全维度具身物理感知与逻辑推理评测基准。该评测基准是一个面向多模态物理智能的全维度、多粒度评估系统，首次将物理感知与预测、物理逻辑推理、物理世界理解三大核心能力纳入同一评估体系，为通用多模态模型建立了物理认知能力的统一标尺。
@@ -90,7 +90,7 @@
 @article{han2026exploringphysical,
     title={Exploring Physical Intelligence Emergence via Omni-Modal Architecture and Physical Data Engine},
     author={Han, Minghao and Yang, Dingkang and Jiang, Yue and Liu, Yizhou and Zhang, Lihua},
-    journal={arXiv preprint arXiv:2602.xxxx},
+    journal={arXiv preprint arXiv:2602.07064},
     year={2026}
 }
 ```
