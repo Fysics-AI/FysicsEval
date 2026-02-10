@@ -11,7 +11,7 @@
 
 <font size=7><div align='center' >
 [[🏠 Project Page](https://github.com/Fysics-AI/FysicsEval)]
-[[📖 Paper](https://arxiv.org/pdf/xxxxxx)]
+[[📖 Paper](https://arxiv.org/pdf/2602.07064)]
 [[🤗 Dataset](https://huggingface.co/datasets/Fysics-AI/FysicsEval)]
 [[🏆 Leaderboard](#leaderboard_link)]
 [[🀄 中文版](README_zh.md)]
@@ -88,7 +88,7 @@ If you use **FysicsEval** in your work, please cite:
 @article{han2026exploringphysical,
     title={Exploring Physical Intelligence Emergence via Omni-Modal Architecture and Physical Data Engine},
     author={Han, Minghao and Yang, Dingkang and Jiang, Yue and Liu, Yizhou and Zhang, Lihua},
-    journal={arXiv preprint arXiv:2602.xxxx},
+    journal={arXiv preprint arXiv:2602.07064},
     year={2026}
 }
 ```
