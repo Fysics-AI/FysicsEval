@@ -57,9 +57,9 @@ Queries are diversified (numeric prediction, open-ended, MCQ) and stratified int
 **MedMCBench** 评测基准在线排行榜，评测结果定期更新，评测指标为 Accuracy (%)。
 | 模型                          | 模型类型 | 平均分 | 多项选择题 | 是非判断题 | 开放式问题 |
 |:------------------------------|:----:|:-------:|:----------:|:------------:|:-------------:|
-| GPT-5                         | Closed-source | 66.73   | 67.95      | 69.83        | 62.41         |
-| Gemini 3 Flash                | Closed-source | 58.62   | 58.60      | 65.15        | 52.10         |
-| GLM-4.6V-106B                 | Open-source   | 56.79   | 56.86      | 63.16        | 50.35         |
+| GPT-5  🥇                         | Closed-source | 66.73   | 67.95      | 69.83        | 62.41         |
+| Gemini 3 Flash  🥈                | Closed-source | 58.62   | 58.60      | 65.15        | 52.10         |
+| GLM-4.6V-106B  🥉               | Open-source   | 56.79   | 56.86      | 63.16        | 50.35         |
 | Kimi K2.5                     | Open-source   | 56.75   | 58.65      | 61.75        | 49.85         |
 | Qwen3-VL-32B-Instruct         | Open-source   | 55.52   | 55.49      | 61.85        | 49.22         |
 | Gemini 2.5 Flash              | Closed-source | 54.68   | 54.90      | 61.30        | 47.85         |
