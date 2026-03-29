@@ -52,21 +52,26 @@ Queries are diversified (numeric prediction, open-ended, MCQ) and stratified int
 - Open-ended reasoning is judged by an LLM-based rubric across six dimensions (semantic consistency, parameter precision, causal validity, mechanism identification, chain completeness, quantitative–qualitative alignment). GPT-5 is used as the standardized automated judge under a fixed prompt and scoring protocol.
 - All evaluation scripts and scoring protocols are shown in `metrics`.
 
+
 ## 🏆 Leaderboard <a id="leaderboard_link"></a>
+**MedMCBench** 评测基准在线排行榜，评测结果定期更新，评测指标为 Accuracy (%)。
+| 模型                          | 模型类型 | 平均分 | 多项选择题 | 是非判断题 | 开放式问题 |
+|:------------------------------|:----:|:-------:|:----------:|:------------:|:-------------:|
+| GPT-5                         | Closed-source | 66.73   | 67.95      | 69.83        | 62.41         |
+| Gemini 3 Flash                | Closed-source | 58.62   | 58.60      | 65.15        | 52.10         |
+| GLM-4.6V-106B                 | Open-source   | 56.79   | 56.86      | 63.16        | 50.35         |
+| Kimi K2.5                     | Open-source   | 56.75   | 58.65      | 61.75        | 49.85         |
+| Qwen3-VL-32B-Instruct         | Open-source   | 55.52   | 55.49      | 61.85        | 49.22         |
+| Gemini 2.5 Flash              | Closed-source | 54.68   | 54.90      | 61.30        | 47.85         |
+| Qwen2.5-VL-32B-Instruct       | Open-source   | 52.88   | 53.75      | 57.24        | 47.65         |
+| Seed-1.6                      | Closed-source | 49.62   | 49.80      | 56.45        | 42.62         |
+| Qwen3-VL-7B-Instruct          | Open-source   | 47.32   | 47.30      | 54.12        | 40.55         |
+| Qwen2.5-VL-7B-Instruct        | Open-source   | 45.74   | 45.91      | 52.61        | 38.70         |
+| LLaVA-Med-7B                  | Open-source   | 38.47   | 38.55      | 45.60        | 31.25         |
+| Med-Flamingo                  | Open-source   | 33.48   | 34.27      | 41.35        | 24.83         |
+| LLaVA-NeXT-7B                 | Open-source   | 33.07   | 33.82      | 40.25        | 25.15         |
+| LLaVA-1.5-7B                  | Open-source   | 29.25   | 29.65      | 36.40        | 21.71         |
 
-The following table reports aggregated model performance on **FysicsEval**. `Reasoning×20` shows the original reasoning score scaled by 20. `Average` is the mean of `Prediction`, `Reasoning×20`, and `Understanding`. The table is sorted by `Average` (descending).
-
-| Model                         | Size | Prediction | Reasoning×20 | Understanding | Average |
-|:------------------------------|:----:|:----------:|:------------:|:-------------:|:-------:|
-| GPT-5                        |  -   | 40.30       | 69.60        | 89.90          | 66.60   |
-| **OmniFysics (Ours)**                   | 3B   | 32.60       | 64.40        | 94.70          | 63.90   |
-| Gemini-2.5-flash             |  -   | 19.80       | 62.00        | 89.40          | 57.07   |
-| Qwen3-VL-8B-Instruct         | 8B   | 20.10       | 53.00        | 90.10          | 54.40   |
-| Ovis2.5                      | 2B   | 20.40       | 49.20        | 89.50          | 53.03   |
-| SAIL-VL2                     | 2B   | 21.90       | 51.60        | 84.70          | 52.73   |
-| Claude-4.5-Haiku             |  -   | 35.30       | 57.80        | 60.30          | 51.13   |
-| InternVL3.5-8B               | 8B   | 21.70       | 50.60        | 80.70          | 51.00   |
-| Qwen2.5-Omni                 | 3B   | 18.10       | 34.20        | 87.50          | 46.60   |
 
 Notes:
 
